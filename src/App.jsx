@@ -43,7 +43,7 @@ const styles = {
   container: {
     display: 'flex',
     bgcolor: 'white',
-    height: '80%'
+    height: '100%'
   },
   mainSection: {
     p: 4,

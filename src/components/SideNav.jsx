@@ -45,9 +45,6 @@ const SideNav = ({ sidebarOpen, collapsed }) => {
                     <Typography variant='body2'>Analytics</Typography>
                 </MenuItem>
 
-                <MenuItem active={location.pathname === '/customization'} component={<Link to="/customization" />} icon={<SourceOutlinedIcon />} >
-                    <Typography variant='body2'>Customization</Typography>
-                </MenuItem>
             </Menu>
         </Sidebar >
 
