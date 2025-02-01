@@ -10,14 +10,10 @@ const columns = [
         field: 'thumbnail',
         headerName: 'Video',
         minWidth: 500,
-        flex: 4,
-        renderCell: (params) => <Box sx={styles.videoColumn}>
-            <Box component={'img'} sx={styles.videoThumbnail} src={params.row.thumbnail} />
-            <Box sx={styles.videoDetails}>
-                <Typography sx={styles.videoTitle}>Must Know Python Questions | Part 1</Typography>
-                <Typography sx={styles.videoDescription}>In this video Tutorial you will learn Python Code</Typography>
-            </Box>
-
+        flex: 2,
+        editable: true,
+        renderCell: (params) => <Box>
+            <Typography sx={styles.videoTitle}>{params.row.thumbnail}</Typography>
         </Box>
     },
     {
@@ -25,6 +21,7 @@ const columns = [
         headerName: 'Live',
         minWidth: 170,
         flex: 2,
+        editable: true,
         renderCell: (params) => <Box sx={styles.iconColumn}>
             <VisibilityOutlinedIcon />
             <Typography sx={styles.iconColumnText}>{params.row.visibility}</Typography>
@@ -47,49 +44,34 @@ const columns = [
         field: 'views',
         headerName: 'Views',
         minWidth: 170,
-        flex: 2
+        flex: 2,
+        renderCell: (params) => <Box>
+            <Typography sx={styles.videoTitle}>{params.row.views}</Typography>
+        </Box>
     }
 ]
 
 const videos = [
-    { id: 1, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 2, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 3, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 4, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 5, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 6, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 7, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 8, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 9, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 10, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 11, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 12, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 13, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 14, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 15, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 16, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 17, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 18, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 19, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 20, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 21, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 22, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 23, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 24, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 25, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 26, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 27, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 28, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
+    { id: 1, thumbnail: 'Must Know Python Questions | Part 1', visibility: 'Public', monitorization: 'On', views: '1k' },
+    { id: 2, thumbnail: 'Must Know Python Questions | Part 2', visibility: 'Public', monitorization: 'On', views: '2k' },
+    { id: 3, thumbnail: 'Must Know Python Questions | Part 3', visibility: 'Public', monitorization: 'On', views: '1k' },
+    { id: 4, thumbnail: 'Must Know Python Questions | Part 4', visibility: 'Public', monitorization: 'On', views: '250' },
+    { id: 5, thumbnail: 'Must Know Python Questions | Part 5', visibility: 'Public', monitorization: 'On', views: '240' },
+    { id: 6, thumbnail: 'Must Know Python Questions | Part 6', visibility: 'Public', monitorization: 'On', views: '240' },
+    { id: 7, thumbnail: 'Must Know Python Questions | Part 7', visibility: 'Public', monitorization: 'On', views: '100' },
+    { id: 8, thumbnail: 'Must Know Python Questions | Part 8', visibility: 'Public', monitorization: 'On', views: '200' },
+    { id: 9, thumbnail: 'Must Know Python Questions | Part 9', visibility: 'Public', monitorization: 'On', views: '300' },
+    { id: 10, thumbnail: 'Must Know Python Questions | Part 10', visibility: 'Public', monitorization: 'On', views: '400' },
 ];
 
 const posts = [
-    { id: 1, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 2, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
-    { id: 3, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 }
+    { id: 1, thumbnail: 'Must Know Python Questions | Part 1', visibility: 'Public', monitorization: 'On', views: '100' },
+    { id: 2, thumbnail: 'Must Know Python Questions | Part 2', visibility: 'Public', monitorization: 'On', views: '200' },
+    { id: 3, thumbnail: 'Must Know Python Questions | Part 3', visibility: 'Public', monitorization: 'On', views: '300' }
 ];
 
 const playlists = [
-    { id: 1, thumbnail: 'IMAGE', visibility: 'Public', monitorization: 'On', views: 100, comments: 12 },
+    { id: 1, thumbnail: 'Must Know Python Questions | Part 1', visibility: 'Public', monitorization: 'On', views: '100' },
 ]
 
 const lives = [
@@ -113,16 +95,25 @@ const Contents = () => {
                     <Tab label='Playlists' id='tab-3' />
                 </Tabs>
                 <TabPanel value={value} index={0}>
-                    <DataGrid rows={videos} columns={columns} pagination pageSize={5} rowsPerPageOptions={[5]} checkboxSelection rowHeight={70} />
+                    {/*<DataGrid rows={videos} columns={columns} pagination pageSize={5} rowsPerPageOptions={[5]} checkboxSelection rowHeight={70} />*/}
+                    <DataGrid rows={videos} columns={columns} initialState={{
+                        pagination: { paginationModel: { pageSize: 5, }, },
+                    }} pageSizeOptions={[5, 10, 15]} checkboxSelection disableRowSelectionOnClick />
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    <DataGrid rows={lives} columns={columns} pagination pageSize={5} rowsPerPageOptions={[5]} checkboxSelection rowHeight={70} />
+                    <DataGrid rows={lives} columns={columns} initialState={{
+                        pagination: { paginationModel: { pageSize: 5, }, },
+                    }} pageSizeOptions={[5, 10, 15]} checkboxSelection disableRowSelectionOnClick />
                 </TabPanel>
                 <TabPanel value={value} index={2}>
-                    <DataGrid rows={posts} columns={columns} pagination pageSize={5} rowsPerPageOptions={[5]} checkboxSelection rowHeight={70} />
+                    <DataGrid rows={posts} columns={columns} initialState={{
+                        pagination: { paginationModel: { pageSize: 5, }, },
+                    }} pageSizeOptions={[5, 10, 15]} checkboxSelection disableRowSelectionOnClick />
                 </TabPanel>
                 <TabPanel value={value} index={3}>
-                    <DataGrid rows={playlists} columns={columns} pagination pageSize={5} rowsPerPageOptions={[5]} checkboxSelection krowHeight={70} />
+                    <DataGrid rows={playlists} columns={columns} initialState={{
+                        pagination: { paginationModel: { pageSize: 5, }, },
+                    }} pageSizeOptions={[5, 10, 15]} checkboxSelection disableRowSelectionOnClick />
                 </TabPanel>
             </Box>
         </Box>
@@ -136,12 +127,6 @@ const styles = {
     pageTitle: {
         mb: 2,
     },
-    videoColumn: {
-        width: 120,
-    },
-    videoDetails: {
-        ml: 2,
-    },
     videoTitle: {
         fontSize: '0.8rem',
         width: 490,
@@ -153,17 +138,6 @@ const styles = {
             cursor: 'pointer'
         },
 
-    },
-    videoDescription: {
-        fontSize: '0.7rem',
-        color: 'blue',
-        width: 490,
-        textOverflow: 'ellipsis',
-        whitespace: 'nowrap',
-        overflow: 'hidden'
-    },
-    videoThumbnail: {
-        width: 120,
     },
     iconColumn: {
         display: 'flex',

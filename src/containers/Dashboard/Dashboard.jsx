@@ -4,15 +4,18 @@ import LatestVideoCard from '../../components/LatestVideoCard'
 import ColorText from '../../components/ColorText'
 import DashView from '../../components/DashView'
 
+import { Bar } from 'react-chartjs-2'
+import { getMainChartData, mainChartOptions } from '../Analytics/ChartConfigs'
+
 const Dashboard = () => {
     return (
         <Box>
             <Typography sx={styles.pageTitle} variant='h5'>Channel DashBoard</Typography>
             <Box sx={styles.columnContainer1}>
-                <DashView title='Views' value='123' />
-                <DashView title='Subscribers' value='123' />
-                <DashView title='Likes' value='123' />
-                <DashView title='Visits' value='123' />
+                <DashView title='Views' value='123K' trend='views' change='-15' bgColor=' #e0f7fa' />
+                <DashView title='Subscribers' value='20K' trend='subscribes' change='-25' bgColor='rgb(196, 190, 231)' />
+                <DashView title='Likes' value='150k' trend='likes' change='15k' bgColor='rgb(238, 184, 222)' />
+                <DashView title='Visits' value='30k' trend='visits' change='-15' bgColor='rgb(161, 217, 189)' />
             </Box>
             <Box sx={styles.columnContainer2}>
                 <LatestVideoCard sx={styles.item} />
@@ -73,6 +76,14 @@ const Dashboard = () => {
                         </Box>
                         <Box sx={styles.videoStatsRow}>
                             <Typography sx={styles.cardAction} variant='link'>GO TO VIDEO ANALYTICS</Typography>
+                        </Box>
+                    </CardContent>
+                </Card>
+                <Card sx={styles.item}>
+                    <CardContent>
+                        <Typography variant="cardTitle">Latest Channel Analytics</Typography>
+                        <Box sx={styles.mainChart}>
+                            <Bar options={mainChartOptions} data={getMainChartData()} />
                         </Box>
                     </CardContent>
                 </Card>
@@ -202,13 +213,16 @@ const styles = {
         mt: 0.5,
         mr: 2,
     },
-    ideaQuestion: {
-
-    },
     ideaContent: {
         fontSize: '0.9rem',
         fontWeight: 500,
         my: 2,
-    }
+    },
+    mainChart: {
+        height: 300,
+        width: 650,
+        boderColor: 'neutral.medium',
+
+    },
 
 }

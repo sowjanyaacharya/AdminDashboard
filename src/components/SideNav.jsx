@@ -14,12 +14,12 @@ const SideNav = ({ sidebarOpen, collapsed }) => {
     const location = useLocation();
 
     return (
-        <Sidebar collapsed={collapsed} open={sidebarOpen} style={{
+        <Sidebar collapsed={collapsed} open={sidebarOpen} sx={{
             height: '100%',
-            top: 'auto'
+
         }}
             breakPoint='md'
-            backgroundColor={theme.palette.neutral.light}
+            backgroundColor='white'
         >
             <Box sx={styles.avatarContainer}>
                 <Avatar sx={styles.avatar} alt="your organisation" src={profileImage} />

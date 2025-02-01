@@ -9,7 +9,7 @@ import AnalyticsTabHead from './AnalyticsTabHead';
 import { getMainChartData, mainChartOptions } from './ChartConfigs';
 //Refs are used to pass to the component
 const ViewsTabHead = forwardRef((props, ref) => <AnalyticsTabHead {...props}
-    title='Views' icon={<ArrowDropDownCircleSharp />} value='21.4k' subtitle={'700 less than usual'} />)
+    title='Views' icon={<ArrowDropDownCircleSharp color='green' />} value='21.4k' subtitle={'700 less than usual'} />)
 
 const WatchTabHead = forwardRef((props, ref) => <AnalyticsTabHead {...props}
     title='Watch Time' icon={<ArrowDropDownCircleSharp color='green' sx={{ transform: 'rotate(180deg)' }} />} value='400' subtitle={'27 more than usual'} />)

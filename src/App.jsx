@@ -42,8 +42,8 @@ const App = () => {
 const styles = {
   container: {
     display: 'flex',
-    bgcolor: 'neutral.light',
-    height: 'calc(100%-64px)'
+    bgcolor: 'white',
+    height: '80%'
   },
   mainSection: {
     p: 4,

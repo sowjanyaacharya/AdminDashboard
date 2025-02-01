@@ -2,7 +2,6 @@ import { Box, Tab, Tabs, Typography } from '@mui/material'
 import TabPanel from '../../components/TabPanel';
 import { useState } from 'react'
 import OverviewCharts from './OverviewCharts';
-import RealTimeCharts from './RealTimeCharts';
 
 const Analytics = () => {
     const [value, setValue] = useState(0);
@@ -27,9 +26,7 @@ const Analytics = () => {
                                 Your Channel got 23,084 views in the last 28days</Typography>
                             <OverviewCharts />
                         </Box>
-                        <Box>
-                            <RealTimeCharts />
-                        </Box>
+
                     </Box>
                 </TabPanel>
                 <TabPanel value={value} index={1}>
