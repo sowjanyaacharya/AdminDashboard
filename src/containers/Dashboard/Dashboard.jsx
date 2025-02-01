@@ -2,12 +2,19 @@ import { Avatar, Box, Card, CardContent, Divider, Typography } from '@mui/materi
 import React from 'react'
 import LatestVideoCard from '../../components/LatestVideoCard'
 import ColorText from '../../components/ColorText'
+import DashView from '../../components/DashView'
 
 const Dashboard = () => {
     return (
         <Box>
             <Typography sx={styles.pageTitle} variant='h5'>Channel DashBoard</Typography>
-            <Box sx={styles.columnContainer}>
+            <Box sx={styles.columnContainer1}>
+                <DashView title='Views' value='123' />
+                <DashView title='Subscribers' value='123' />
+                <DashView title='Likes' value='123' />
+                <DashView title='Visits' value='123' />
+            </Box>
+            <Box sx={styles.columnContainer2}>
                 <LatestVideoCard sx={styles.item} />
                 <Card sx={styles.item}>
                     <CardContent>
@@ -111,9 +118,21 @@ const Dashboard = () => {
                         <Typography sx={styles.cardAction} variant='link'>VIEW MORE</Typography>
                     </CardContent>
                 </Card>
+                <Card sx={styles.item}>
+                    <CardContent sx={styles.ideaContent}>
+                        <Box>
+                            <Typography variant="cardTitle">Ideas For You</Typography>
+                            <Typography sx={styles.ideaQuestion}>Read to get business?</Typography>
+                            <Typography variant="h7">
+                                Get Tips For Success
+                            </Typography>
+                            <Typography sx={styles.cardAction} variant='link'>GET STARTED NOW</Typography>
+                        </Box>
 
+                    </CardContent>
+                </Card>
             </Box>
-        </Box>
+        </Box >
     )
 }
 
@@ -124,12 +143,14 @@ const styles = {
     pageTitle: {
         mb: 6
     },
-    columnContainer: {
+    columnContainer1: {
+        columnWidth: '200px',
+        columnCount: 4,
+        mb: 2,
+    },
+    columnContainer2: {
         columnWidth: '280px',
         columnCount: 3,
-
-        /*columns: '280px, 3',
-        maxWidth: 1400,*/
     },
     item: {
         mb: 2,
@@ -181,5 +202,13 @@ const styles = {
         mt: 0.5,
         mr: 2,
     },
+    ideaQuestion: {
+
+    },
+    ideaContent: {
+        fontSize: '0.9rem',
+        fontWeight: 500,
+        my: 2,
+    }
 
 }
