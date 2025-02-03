@@ -10,6 +10,7 @@ import AppHeader from './components/AppHeader';
 import { BrowserRouter } from 'react-router-dom'
 import AppRoutes from './router/AppRoutes';
 import { useState } from 'react';
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -29,6 +30,7 @@ const App = () => {
             <Box component={'main'} sx={styles.mainSection}>
               {/*Based on the url path in the browser it is rendering the component*/}
               <AppRoutes />
+              <ToastContainer />
             </Box>
           </BrowserRouter>
         </Box>

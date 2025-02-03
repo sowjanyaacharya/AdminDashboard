@@ -1,5 +1,5 @@
 import { Avatar, Box, Typography, useTheme } from '@mui/material'
-import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar'
+import { Menu, MenuItem, Sidebar, SubMenu } from 'react-pro-sidebar'
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import StyleOutlinedIcon from '@mui/icons-material/StyleOutlined';
 import SourceOutlinedIcon from '@mui/icons-material/SourceOutlined';
@@ -45,10 +45,19 @@ const SideNav = ({ sidebarOpen, collapsed }) => {
                     <Typography variant='body2'>Analytics</Typography>
                 </MenuItem>
 
-            </Menu>
-        </Sidebar >
+                <SubMenu label='Channel' icon={<InsightsOutlinedIcon />} >
+                    <MenuItem active={location.pathname === '/channel'} component={<Link to="/createchannel" />} icon={<InsightsOutlinedIcon />} >
 
-    )
+                        <Typography variant='body2'>Create Channel</Typography>
+                    </MenuItem>
+                    <MenuItem active={location.pathname === '//channel'} component={<Link to="/channellist" />} icon={<InsightsOutlinedIcon />} >
+                        <Typography variant='body2'>Channel List</Typography>
+                    </MenuItem>
+                </SubMenu>
+            </Menu>
+        </Sidebar >)
+
+
 }
 /** @type {import("@mui/material").SxProps} */
 const styles = {
